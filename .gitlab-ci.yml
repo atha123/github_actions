@@ -9,6 +9,7 @@ run_pylint_quality_check:
     image: $PYTHON_IMAGE
     stage: code_quality
     script:
+      - ls
       - pip install pylint
       - pylint -E demostore_frontend_backend_tests
 

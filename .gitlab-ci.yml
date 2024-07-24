@@ -10,6 +10,7 @@ run_pylint_quality_check:
     stage: code_quality
     script:
       - ls
+      - pip install requirements.txt
       - pip install pylint
       - pylint -E ssqatest
 
@@ -19,7 +20,6 @@ run_BE_Regression:
     script:
       - pwd
       - ls
-      - pip install requirements.txt
       - source variables_local.env
       - env
       - cd demostore_frontend_backend_tests

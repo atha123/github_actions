@@ -10,5 +10,5 @@ set DB_HOST=dev.bootcamp.store.supersqa.com
 set DB_DATABASE=demostore
 set DB_TABLE_PREFIX=wp_
 
-set PYTHONPATH=C:\Users\Latha\QA-Automation\My_Code\demostore_frontend_backend_tests
+set PYTHONPATH=C:\Users\Latha\QA-Automation\My_Code\Gitlab\demostore_frontend_backend_tests
 

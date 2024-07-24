@@ -1,15 +1,17 @@
 stages:
-    -code_quality
-    -run_tests
-    
-variables:
-    
+    - code_quality
+    - run_tests
+
+
+
 run_pylint_quality_check:
+    stage: code_quality
     script:
-       -pylint demostore_frontend_backend_tests
-       
-run_BE_Regression: 
-    scripts:
-        -cd demostore_frontend_backend_tests
-        -python3 -m pytest -m tests/backend
-    
+      -pip install pylint
+      -pylint demostore_frontend_backend_tests
+
+run_BE_Regression:
+    stage: run_tests
+    script:
+      -cd demostore_frontend_backend_tests
+      -python3 -m pytest -m tests/backend

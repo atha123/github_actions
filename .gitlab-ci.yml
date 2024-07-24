@@ -7,6 +7,7 @@ stages:
 run_pylint_quality_check:
     stage: code_quality
     script:
+      -pip install pylint
       -pylint demostore_frontend_backend_tests
 
 run_BE_Regression:

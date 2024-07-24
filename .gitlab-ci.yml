@@ -11,7 +11,7 @@ run_pylint_quality_check:
     script:
       - ls
       - pip install pylint
-      - pylint -E demostore_frontend_backend_tests
+      - pylint -E ssqatest
 
 run_BE_Regression:
     image: $PYTHON_IMAGE

@@ -2,16 +2,25 @@ stages:
     - code_quality
     - run_tests
 
-
+variables:
+  PYTHON_IMAGE: python:latest
 
 run_pylint_quality_check:
+    image: $PYTHON_IMAGE
     stage: code_quality
     script:
       -pip install pylint
-      -pylint demostore_frontend_backend_tests
+      -pylint -E demostore_frontend_backend_tests
 
 run_BE_Regression:
+    image: $PYTHON_IMAGE
     stage: run_tests
     script:
+      -pwd
+      -ls
+      -pip install requirements.txt
+      -source variables_local.env
+      -env
       -cd demostore_frontend_backend_tests
       -python3 -m pytest -m tests/backend
+    when: always

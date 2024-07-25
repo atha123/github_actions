@@ -4,7 +4,6 @@ import  logging as logger
 
 pytestmark=[pytest.mark.feregression, pytest.mark.fesmoke]
 @pytest.mark.usefixtures("init_driver")
-
 class TestDropDown():
     """
     This is a test to check that the expected strings show up in the drop down menu of the main page (bottom) using a for loop.

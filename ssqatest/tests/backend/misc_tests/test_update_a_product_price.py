@@ -8,6 +8,7 @@ import random
 @pytest.mark.be005
 def test_update_price_of_product():
     """
+    NOTE: THIS TEST IS NOT COMPLETED YET !
     This is a test to find a product that is not on sale and update the pricing.
     If all products are on sale then pick a random product, make the sale price= $0.00 and then update the pricing.
     """

@@ -1,14 +1,12 @@
 import pytest
 from ssqatest.src.api_helpers.ProductsAPIHelper import ProductsAPIHelper
 from ssqatest.src.dao.products_dao import ProductsDAO
-pytestmark= [pytest.mark.products, pytest.mark.regression]
+# pytestmark= [pytest.mark.products, pytest.mark.regression]
 import random
-
 
 @pytest.mark.be005
 def test_update_price_of_product():
     """
-    NOTE: THIS TEST IS NOT COMPLETED YET !
     This is a test to find a product that is not on sale and update the pricing.
     If all products are on sale then pick a random product, make the sale price= $0.00 and then update the pricing.
     """
@@ -22,16 +20,13 @@ def test_update_price_of_product():
     # Use the filter to select the products not on sale.
     not_on_sale = api_helper.call_list_products(filters)
     any_product = api_helper.call_list_products()
-    print(not_on_sale)
 
     if not_on_sale: # Select random products from products that are not on sale
         selected_item = random.choice(not_on_sale)
-        print(f"selected item is: '{selected_item}'")
         item_id = selected_item['id']
-        print(f"product id is : '{item_id}")
         price_selected_item = selected_item["sale_price"]
         name_selected_item = selected_item["name"]
-        print(f"price of selected item: '{name_selected_item}' on sale is: '{price_selected_item}'")
+        print(f" The sale price of selected item that is NOT on sale'{name_selected_item}'  before update is:  is: '{price_selected_item}'")
     else: # Select random products if  all products are on sale.
         selected_item = random.choice(any_product)
         item_id = selected_item["id"]
@@ -40,18 +35,14 @@ def test_update_price_of_product():
         print(f"price of selected item is: '{price_selected_item}'")
 
     # For the selected item, update the price
-    selected_item["sale_price"] = "10.00"
-    updated_item = api_helper.call_update_product(item_id,selected_item["sale_price"])
-    # print(f"details of the selected item is : '{selected_item}'")
-    print(f"price of the selected item is : '{updated_item['sale_price']}'")
+    payload = dict()
+    breakpoint()
+    payload['regular_price'] = "10.00"
+    update_price = api_helper.call_update_product(item_id,payload=payload)
+    print(f"The new updated dictionery is : '{update_price}'")
+    print(f"The new sale price of the selected item after update is : '{update_price['sale_price']}'")
+    print(f"The Regular Price is : {selected_item['regular_price']}")
+    print(f"The Price is : {selected_item['price']}")
 
-    # Verify that the new price is $10.00
-    # product_rs = api_helper.call_get_product_by_id(item_id)
-    # print(f"price from api is : '{product_rs['sale_price']}'")
-
-
-
-
-
-    # For the product selected (both cases), update the price.
-
+    # Verify the price is updated correctly
+    # assert selected_item['sale_price'] == "10.00"

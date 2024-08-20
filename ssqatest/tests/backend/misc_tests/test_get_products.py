@@ -5,11 +5,12 @@ from ssqatest.src.api_helpers.ProductsAPIHelper import ProductsAPIHelper
 from ssqatest.src.dao.products_dao import ProductsDAO
 
 pytestmark = [pytest.mark.backend]
-"""
-This is a test to check the get call 
-"""
+
 @pytest.mark.be003
 def test_get_products_call():
+    """
+    This is a test to check the get call
+    """
     # Create a product first
     payload = dict()
     payload["name"] = generate_random_string(5, "get_")

@@ -1,7 +1,7 @@
 import pytest
 from ssqatest.src.api_helpers.ProductsAPIHelper import ProductsAPIHelper
-from ssqatest.src.dao.products_dao import ProductsDAO
-# pytestmark= [pytest.mark.products, pytest.mark.regression]
+import logging as logger
+pytestmark= [pytest.mark.products, pytest.mark.regression]
 import random
 
 @pytest.mark.be005
@@ -14,7 +14,7 @@ def test_update_price_of_product():
     api_helper = ProductsAPIHelper()
 
     # Create a filter to pick items that are not on sale
-    filters = {'on_sale':False, 'per_page': 100}
+    filters = {'on_sale':False, 'per_page': 100, 'type':'simple'}
 
     # Use the filter to select the products not on sale.
     not_on_sale = api_helper.call_list_products(filters)
@@ -29,19 +29,27 @@ def test_update_price_of_product():
     else: # Select random products if  all products are on sale.
         selected_item = random.choice(any_product)
         item_id = selected_item["id"]
-        print(f"product id for a random item on sale : '{item_id}")
+        price_selected_item = selected_item["sale_price"]
+        print(f"product id for a random item on sale : '{item_id}'")
         selected_item["sale_price"] =""
         print(f"price of selected item is: '{price_selected_item}'")
 
-    # For the selected item, update the price
+    # For the selected item, update the price. Create a payload first
     payload = dict()
-    # breakpoint()
     payload['regular_price'] = "15.00"
-    update_price = api_helper.call_update_product(item_id,payload=payload)
-    # print(f"The new updated dictionery is : '{update_price}'")
-    # print(f"The Regular Price is : {update_price['regular_price']}")
-    # print(f"The Price is : {update_price['price']}")
+    update_price = api_helper.call_update_product(item_id,payload=payload)  # Update the price to $15.00
+
 
     # Verify the price is updated correctly
-    assert update_price['regular_price'] == "15.00", f"Regular Price was not updated. Expected was $'15.00' and Actual price is {update_price['regular_price']} "
-    assert update_price['price'] == "15.00", "Regular Price was not updated"
+    assert update_price['regular_price'] == "15.00", f"Regular Price was not updated. Expected was $'15.00' and Actual price is $'{update_price['regular_price']}' "
+
+    # Verify from the API response
+    rs_data = api_helper.call_retrieve_product(item_id)
+    updated_rp = rs_data['regular_price']
+    print(updated_rp)
+    assert updated_rp == "15.00", "Price is not yet updated"
+
+    logger.info("Passed test!")
+
+
+

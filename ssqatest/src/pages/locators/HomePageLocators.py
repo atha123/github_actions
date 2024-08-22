@@ -20,6 +20,8 @@ class HomePageLocators:
     PRODUCT_PRICE_PRICE = (By.CSS_SELECTOR, 'span.price del')
     SALE_BADGE = (By.CSS_SELECTOR, 'span.onsale')
     X_Z_OF_Y_RESULTS = (By.CSS_SELECTOR, 'p.woocommerce-result-count')
+    FIRST_PRODUCT = (By.CSS_SELECTOR, 'a.woocommerce-LoopProduct-link')
+
 
 
 

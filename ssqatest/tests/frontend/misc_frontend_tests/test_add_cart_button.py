@@ -19,11 +19,11 @@ class TestAddCart:
     def test_add_cart(self,setup):
         self.home.go_to_home_page()
         count_before= self.header.get_cart_item_count()
-        logger.info(f"Count of items before clicking 'Add to cart' is : {count_before}")
+        print(f"Count of items before clicking 'Add to cart' is : {count_before}")
         self.home.click_first_add_to_cart_button()
         self.header.wait_until_cart_item_count(1)
         count_after = self.header.get_cart_item_count()
-        logger.info(f"Count of items after clicking 'Add to cart' is : {count_after}")
+        print(f"Count of items after clicking 'Add to cart' is : {count_after}")
 
         assert int(count_after) == int(count_before)+1, "failed"
         logger.info("Test Passed!!")

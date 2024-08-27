@@ -5,7 +5,7 @@ import logging as logger
 @pytest.mark.usefixtures("init_driver")
 class TestDisplayProductName:
     """
-        This is a test to ensure that each product on the home page gets its product name displayed at the bottom of the picture.
+    This is a test to ensure that each product on the home page gets its product name displayed at the bottom of the picture.
     """
     @pytest.fixture(scope= 'class')
     def setup(self,request):
@@ -20,7 +20,6 @@ class TestDisplayProductName:
         for i in test:
             whole_name= i.text
             name=whole_name.split("\n")
-            print(name[0])
             assert name, "Product name is not displayed! "
 
         logger.info(("Test Passed !"))

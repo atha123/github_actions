@@ -14,7 +14,6 @@ class HomePage(HomePageLocators):
     def go_to_home_page(self):
         home_url = MainConfigs.get_base_url()
         self.driver.get(home_url)
-
     def click_first_add_to_cart_button(self):
         self.sl.wait_and_click(self.ADD_TO_CART_BTN)
 
@@ -84,5 +83,6 @@ class HomePage(HomePageLocators):
 
     def get_x_z_result(self):
         return self.sl.wait_and_get_text(self.X_Z_OF_Y_RESULTS)
-
+    def click_first_product_image(self):
+        self.sl.wait_and_click(self.FIRST_PRODUCT)
 

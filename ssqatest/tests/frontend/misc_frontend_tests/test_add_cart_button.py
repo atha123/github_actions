@@ -16,7 +16,15 @@ class TestAddCart:
         request.cls.header = Header(self.driver)
 
     @pytest.mark.lp015
-    def test_add_cart(self,setup):
+    def test_add_to_cart_counter(self,setup):
+        """
+            This test is to check that when a user clicks on the 'Add to Cart' button, the number of items in the cart is incremented.
+        Args:
+            setup:
+
+        Returns:
+
+        """
         self.home.go_to_home_page()
         count_before= self.header.get_cart_item_count()
         print(f"Count of items before clicking 'Add to cart' is : {count_before}")

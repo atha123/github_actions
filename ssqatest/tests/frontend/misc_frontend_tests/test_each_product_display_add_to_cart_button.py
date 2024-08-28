@@ -15,7 +15,15 @@ class TestDisplayAddToCart:
         request.cls.home = HomePage(self.driver)
 
     @pytest.mark.lp020
-    def test_viewcart(self, setup):
+    def test_add_to_cart_button(self, setup):
+        """
+        This is a test to ensure that the 'Add to Cart' button is displayed for each item.
+        Args:
+            setup:
+
+        Returns:
+
+        """
         self.home.go_home()
         items = self.home.get_all_products()
         for i in items:

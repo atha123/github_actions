@@ -1,10 +1,10 @@
 from ssqatest.src.selenium_extended.SeleniumExtended import SeleniumExtended
 from ssqatest.src.configs.MainConfigs import MainConfigs
 # from ssqatest.src.pages.locators.HomePageLocators import HomePageLocators
-from ssqatest.src.pages.locators.HomeLocators_V2 import LpHomeLocators
+from ssqatest.src.pages.locators.HomeLocators_V2 import HomeLocatorsV2
 
 
-class HomePage(LpHomeLocators):
+class HomePage(HomeLocatorsV2):
     def __init__(self,driver):
         self.driver = driver
         self.sl=SeleniumExtended(self.driver)

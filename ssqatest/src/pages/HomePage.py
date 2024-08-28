@@ -84,5 +84,5 @@ class HomePage(HomePageLocators):
     def get_x_z_result(self):
         return self.sl.wait_and_get_text(self.X_Z_OF_Y_RESULTS)
     def click_first_product_image(self):
-        self.sl.wait_and_click(self.FIRST_PRODUCT)
+        self.sl.wait_and_click(self.FIRST_PRODUCT_IMG)
 

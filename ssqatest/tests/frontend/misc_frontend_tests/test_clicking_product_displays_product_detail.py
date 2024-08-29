@@ -15,7 +15,6 @@ class TestClickingProductShowsDesc:
 
     @pytest.mark.lp014
     def test_product_name_under_image(self,setup):
-        # breakpoint()
         self.home.go_to_home_page()
         first_product = self.home.get_firts_product_name()
         # print(f"first product is : '{first_product}'")

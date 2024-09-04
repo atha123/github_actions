@@ -22,6 +22,6 @@ run_BE_Regression:
       - ls
       - source variables_local.env
       - env
-      - cd demostore_frontend_backend_tests
+      - cd demostore_frontend_backend_tests/ssqatest
       - python3 -m pytest -m tests/backend
     when: always

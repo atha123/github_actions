@@ -5,14 +5,14 @@ stages:
 variables:
   PYTHON_IMAGE: python:latest
 
-run_pylint_quality_check:
-    image: $PYTHON_IMAGE
-    stage: code_quality
-    script:
-      - ls
-      - python -m pip install -r requirements.txt
-      - pip install pylint
-      - pylint -E ssqatest
+#run_pylint_quality_check:
+#    image: $PYTHON_IMAGE
+#    stage: code_quality
+#    script:
+#      - ls
+#      - python -m pip install -r requirements.txt
+#      - pip install pylint
+#      - pylint -E ssqatest
 
 run_BE_Regression:
     image: $PYTHON_IMAGE

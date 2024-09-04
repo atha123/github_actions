@@ -8,6 +8,7 @@ import tempfile
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options as ChOptions
 from selenium.webdriver.firefox.options import Options as FFOptions
+import csv
 
 
 # pytest_plugins = ["pytest_plugins"]

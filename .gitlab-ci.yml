@@ -3,7 +3,7 @@ stages:
     - run_tests
 
 variables:
-  PYTHON_IMAGE: python:latest
+  PYTHON_IMAGE: python:3.10
 
 #run_pylint_quality_check:
 #    image: $PYTHON_IMAGE

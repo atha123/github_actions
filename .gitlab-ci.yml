@@ -24,5 +24,5 @@ run_BE_Regression:
       - source variables_local.env
       - env
       - cd ssqatest
-      - python3 -m pytest -m tests/backend
+      - python3 -m pytest -m lp014 tests
     when: always

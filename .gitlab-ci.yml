@@ -4,7 +4,7 @@ stages:
 
 variables:
   PYTHON_IMAGE: python:3.10
-  RESULTS_DIR=$(pwd)/results
+  RESULTS_DIR: $(pwd)/results
 
 #run_pylint_quality_check:
 #    image: $PYTHON_IMAGE
@@ -25,7 +25,7 @@ run_BE_Regression:
       - source variables_local.env
       - env
       - cd ssqatest
-      - python3 -m pytest tests/backend --html=0982024_report.html  --self-contained-html
+      - python3 -m pytest -m lp015 --html=0982024_report.html  --self-contained-html
       - ls
     when: always
 

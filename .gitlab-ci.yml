@@ -29,6 +29,6 @@ run_BE_Regression:
     when: always
 
 artifacts:
+  when: always
   paths:
-    - dist/
-    - lhp_982024_report.html
+    - ./output

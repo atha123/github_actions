@@ -4,6 +4,7 @@ stages:
 
 variables:
   PYTHON_IMAGE: python:3.10
+  RESULTS_DIR=$(pwd)/results
 
 #run_pylint_quality_check:
 #    image: $PYTHON_IMAGE
@@ -31,4 +32,4 @@ run_BE_Regression:
     artifacts:
       when: always
       paths:
-        - ./results
+        - ${RESULTS_DIR}

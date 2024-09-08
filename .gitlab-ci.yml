@@ -25,4 +25,10 @@ run_BE_Regression:
       - env
       - cd ssqatest
       - python3 -m pytest tests/backend --html=0982024_report.html  --self-contained-html
+      - ls
     when: always
+
+artifacts:
+  paths:
+    - dist/
+    - lhp_982024_report.html

@@ -34,5 +34,5 @@ run_BE_Regression:
     artifacts:
       when: always
       paths:
-        - ./ssqatest/results
+        - ./results
 

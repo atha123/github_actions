@@ -26,6 +26,7 @@ run_BE_Regression:
       - env
       - cd ssqatest
       - python3 -m pytest -m lp015 --html=0982024_report.html  --self-contained-html
+      - pwd
       - ls
     when: always
 

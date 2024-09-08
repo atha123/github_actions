@@ -25,7 +25,7 @@ run_BE_Regression:
       - source variables_local.env
       - env
       - cd ssqatest
-      - python3 -m pytest -m lp015 --html=0982024_report.html  --self-contained-html
+      - python3 -m pytest -m be003 --html=./ssqatest/results/0982024_report.html  --self-contained-html
       - pwd
       - ls
     when: always
@@ -34,3 +34,4 @@ run_BE_Regression:
       when: always
       paths:
         - ./ssqatest/results
+

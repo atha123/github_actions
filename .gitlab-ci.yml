@@ -28,7 +28,7 @@ run_BE_Regression:
       - ls
     when: always
 
-artifacts:
-  when: always
-  paths:
-    - ./output
+    artifacts:
+      when: always
+      paths:
+        - ./output

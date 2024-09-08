@@ -6,6 +6,7 @@ variables:
   PYTHON_IMAGE: python:3.10
 
 
+
 #run_pylint_quality_check:
 #    image: $PYTHON_IMAGE
 #    stage: code_quality
@@ -25,7 +26,7 @@ run_BE_Regression:
       - source variables_local.env
       - env
       - cd ssqatest
-      - python3 -m pytest -m be003 --html=./ssqatest/results/0982024_report.html  --self-contained-html
+      - python3 -m pytest -m be003 --html==$RESULTS_DIR/0982024_report.html  --self-contained-html
       - pwd
       - ls
     when: always

@@ -10,7 +10,7 @@ variables:
 run_pylint_quality_check:
     image: $PYTHON_IMAGE
     stage: code_quality
-    when: never
+    when: manual
     script:
       - date
       - ls

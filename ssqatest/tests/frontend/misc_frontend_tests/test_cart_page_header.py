@@ -42,7 +42,7 @@ class TestCartHeader:
         #Assert that the labels are correct
         expected = ['Remove item','Thumbnail image','Product','Price','Quantity','Subtotal']
         l = len(expected)
-        print(l)
+
         for i in range(l):
             assert headers[i].text == expected[i], "Mismatch!"
 

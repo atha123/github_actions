@@ -33,7 +33,7 @@ class TestCartHeader:
         self.home.click_first_add_to_cart_button()
         self.header.wait_until_cart_item_count(1)
         self.cart.go_to_cart_page()
-]
+
         headers = self.cart.get_cart_column_header()
 
         # Assert that there are 5 labels

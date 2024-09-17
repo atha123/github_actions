@@ -12,6 +12,7 @@ run_pylint_quality_check:
     stage: code_quality
     when: never
     script:
+      - date
       - ls
       - python -m pip install -r requirements.txt
       - pip install pylint

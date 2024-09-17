@@ -44,7 +44,7 @@ class TestCartHeader:
         l = len(expected)
 
         for i in range(l):
-            assert headers[i].text == expected[i], "Mismatch!"
+            assert headers[i].text == expected[i], "The column names do not match the expected names."
 
 
 

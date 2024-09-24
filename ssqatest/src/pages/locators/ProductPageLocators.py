@@ -8,7 +8,8 @@ class ProductPageLocators:
     PRODUCT_ALTERNATE_IMAGES = (By.CSS_SELECTOR, 'div.woocommerce-product-gallery.images ol.flex-control-thumbs li img')
     PRODUCT_TYPE_TEXT = (By.CSS_SELECTOR, 'div.entry-summary div.woocommerce-product-details__short-description')
     PRODUCT_PRICE = (By.CSS_SELECTOR, 'div.entry-summary p.price')
-    ADD_TO_CART_BUTTON = (By.CSS_SELECTOR, 'div[class*="add-to-cart"] button[class*="add_to_cart_button"][type="submit"]')
+    ADD_TO_CART_BUTTON = (By.CSS_SELECTOR,'#product-17 > div.summary.entry-summary > form > button')
+    # ADD_TO_CART_BUTTON = (By.CSS_SELECTOR, 'div[class*="add-to-cart"] button[class*="add_to_cart_button"][type="submit"]')
     VIEW_CART_BTN_IN_SUCCESS_MESSAGE = (By.CSS_SELECTOR, 'div.woocommerce-message[role="alert"] a.button.wc-forward')
     PRODUCT_PAGE_QUANTITY_FIELD = (By.CSS_SELECTOR, 'div[class*="add-to-cart"] div.quantity input.input-text.qty')
     PRODUCT_PAGE_SKU_AND_LABEL = (By.CSS_SELECTOR, 'div.product_meta span.sku_wrapper')
@@ -27,4 +28,5 @@ class ProductPageLocators:
 
     RESET_VARIATIONS_BTN = (By.CSS_SELECTOR, 'table.variations a.reset_variations')
     FRIST_VARIABE_PRODUCT = (By.CSS_SELECTOR,'li.product.type-product.post-13.status-publish.instock.product_cat-hoodies.has-post-thumbnail a')
+
 

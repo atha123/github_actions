@@ -3,11 +3,14 @@ stages:
     - run_tests
 
 variables:
-  PYTHON_IMAGE: python:latest
+  PYTHON_IMAGE: python:3.10
+
+
 
 run_pylint_quality_check:
     image: $PYTHON_IMAGE
     stage: code_quality
+    when: manual
     script:
       - ls
       - python -m pip install -r requirements.txt
@@ -20,8 +23,19 @@ run_BE_Regression:
     script:
       - pwd
       - ls
+      - current_date=$(date '+%Y-%m-%d')
+      - python -m pip install -r requirements.txt
       - source variables_local.env
       - env
-      - cd demostore_frontend_backend_tests
-      - python3 -m pytest -m tests/backend
+      - cd ssqatest
+#      - python3 -m pytest tests/backend --html=$RESULTS_DIR/0982024_report.html  --self-contained-html
+      -  python3 -m pytest tests/backend --html=${current_date}.html  --self-contained-html
+      - pwd
+      - ls
     when: always
+
+    artifacts:
+      when: always
+      paths:
+        - ./results
+

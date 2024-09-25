@@ -34,10 +34,10 @@ class Testbusinessflow:
         # Assert the first confirmation string
         actual_first_message = list_message[0]
         expected_first_message = '“Belt” removed. Undo?'
-        assert actual_first_message == expected_first_message, "First message is Incorrect!"
+        assert actual_first_message == expected_first_message, f"First message is Incorrect! Expected:'{expected_first_message}'. Actual:'{actual_first_message}'"
 
         # Assert the second confirmation string.
-        assert list_message[1] == 'Your cart is currently empty.', "Second message is Incorrect!"
+        assert list_message[1] == "Your cart is currently empty.", f"Second message is Incorrect!. Expected:'Your cart is currently empty.'. Actual:'{list_message[1]}'"
 
 
 

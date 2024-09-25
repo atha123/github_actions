@@ -19,7 +19,7 @@ class Testbusinessflow:
         request.cls.checkout  = CheckoutPage(self.driver)
         yield
 
-    @pytest.mark.lp24
+    @pytest.mark.lp23
     def test_add_product_to_cart(self,setup):
         """
         Test to perform the following steps
@@ -45,7 +45,7 @@ class Testbusinessflow:
         print(actual_msgs_list)
         length= len(actual_msgs_list)
 
-        #Assert that the number of error messages displayed when only zipcode is entered is 7.
+        #Assert that the number of error messages displayed when only zipcode is entered is 8.
         assert len(actual_msgs_list) == 8, f"Number of error messages should be 7. Actual is: {len(actual_msgs_list)}"
 
         # Assert the error message strings

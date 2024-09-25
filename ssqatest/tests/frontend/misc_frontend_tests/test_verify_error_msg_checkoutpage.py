@@ -37,7 +37,6 @@ class Testbusinessflow:
 
 
         #Enter test data
-        # self.checkout.input_billing_zip("12345")
         self.checkout.click_place_order()
         actual_msgs = self.checkout.get_checkout_error_msgs()
         expected_msgs_list = ['Billing First name is a required field.','Billing Last name is a required field.','Billing Street address is a required field.','Billing Town / City is a required field.','Billing ZIP Code is a required field.','Billing Phone is a required field.','Billing Email address is a required field.','Invalid payment method.']

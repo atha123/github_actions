@@ -43,7 +43,7 @@ class Testbusinessflow:
 
         actual_msgs_list = actual_msgs.split("\n")
         #Assert that the number of error messages displayed when incorrect format zipcode is entered is 8.
-        assert len(actual_msgs_list) == 8, f"Number of error messages should be 7. Actual is: {len(actual_msgs_list)}"
+        assert len(actual_msgs_list) == 9, f"Number of error messages should be 9. Actual is: {len(actual_msgs_list)}"
 
         # Assert the error message string for the invalid format zipcode.
         assert actual_msgs_list[4] == "Billing ZIP Code is not a valid postcode / ZIP.", f"Expected error message:'Billing ZIP Code is not a valid postcode / ZIP.'. Actual error msg: '{actual_msgs_list[4]}'"

@@ -25,5 +25,12 @@ class Testbusinessflow:
         name= self.product.get_displayed_product_name()
         self.product.click_add_to_cart_button()
         message = self.product.get_confirm_msg_on_product_add_to_cart().text
+        message_list = message.split("\n")
+        expected_second_msg = '“Belt” has been added to your cart.'
 
-        print(message)
+        #Verify the confirmation message strings
+        assert message_list[0] == "View cart", f"Expected was 'View cart'. Actual is: {message_list[0]}"
+        assert message_list[1] == expected_second_msg, f"Expected was:'{expected_second_msg}' and actual was: '{message_list[1]}'"
+
+
+

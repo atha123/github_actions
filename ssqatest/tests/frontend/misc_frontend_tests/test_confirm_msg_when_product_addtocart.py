@@ -24,7 +24,6 @@ class Testbusinessflow:
         self.header.press_enter_on_search_field()
         name= self.product.get_displayed_product_name()
         self.product.click_add_to_cart_button()
-        breakpoint()
         message = self.product.get_confirm_msg_on_product_add_to_cart().text
 
         print(message)

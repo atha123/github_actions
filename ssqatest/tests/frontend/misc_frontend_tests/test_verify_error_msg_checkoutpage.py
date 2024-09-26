@@ -1,3 +1,5 @@
+import time
+
 import pytest
 from ssqatest.src.pages.HomePage_V2 import HomePage
 from ssqatest.src.pages.ProductPage import ProductPage
@@ -52,11 +54,4 @@ class Testbusinessflow:
         for i in range(length):
             print(f"Error message {i}: '{actual_msgs_list[i]}' is present.")
             assert expected_msgs_list[i] == actual_msgs_list[i], "Error"
-
-
-
-
-
-
-
-
+            time.sleep(10)

@@ -156,3 +156,8 @@ class ProductPage(ProductPageLocators):
 
     def click_on_first_variable_product(self):
         self.sl.wait_and_click(self.FRIST_VARIABE_PRODUCT)
+
+
+    def get_confirm_msg_on_product_add_to_cart(self):
+        msg = self.sl.wait_until_element_is_visible(self.VIEW_CART_BTN_IN_SUCCESS_MESSAGE)
+        return msg

@@ -15,3 +15,5 @@ class CheckoutPageLocators:
 
     PLACE_ORDER_BTN = (By.ID, 'place_order')
     CHECKOUT_HEADER = (By.CSS_SELECTOR, 'header.entry-header h1')
+
+    CHECKOUT_HEADER_MSGS =(By.CSS_SELECTOR, '#post-8 > div > div > form.checkout.woocommerce-checkout > div.woocommerce-NoticeGroup.woocommerce-NoticeGroup-checkout > ul')

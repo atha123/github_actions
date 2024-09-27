@@ -48,9 +48,3 @@ class Testcartpagefields:
         #Assert that the first item in the Cart page is 'belt' and the second one is 'sunglasses'
         assert items[0] == 'Belt', 'First item should have been belt'
         assert items[1] == 'Sunglasses', 'Second item should have been Sunglasses'
-
-        # Comprehensive test
-
-
-
-

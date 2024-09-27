@@ -5,7 +5,7 @@ from ssqatest.src.pages.CartPage import CartPage
 from ssqatest.src.pages.Header import Header
 
 @pytest.mark.usefixtures("init_driver")
-class Testbusinessflow:
+class TestBusinessFlow:
     """
     This is a test to ensure that the end to end business flow works well.
     """
@@ -18,7 +18,7 @@ class Testbusinessflow:
         yield
 
     @pytest.mark.lp22
-    def test_end_to_end(self,setup):
+    def test_confirmation_msg_when_product_added_to_cart(self,setup):
         self.home.go_home()
         self.header.input_int_search_field("belt")
         self.header.press_enter_on_search_field()

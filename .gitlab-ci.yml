@@ -23,13 +23,14 @@ run_BE_Regression:
     script:
       - pwd
       - ls
+      - mkdir results
       - current_date=$(date '+%Y-%m-%d')
       - python -m pip install -r requirements.txt
       - source variables_local.env
       - env
       - cd ssqatest
 #      - python3 -m pytest tests/backend --html=$RESULTS_DIR/0982024_report.html  --self-contained-html
-      -  python3 -m pytest tests/backend --html=${current_date}.html  --self-contained-html
+      -  python3 -m pytest -m lp24 tests/frontend --html=../results/${current_date}.html  --self-contained-html
       - pwd
       - ls
     when: always

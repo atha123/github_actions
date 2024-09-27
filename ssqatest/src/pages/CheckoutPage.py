@@ -67,3 +67,6 @@ class CheckoutPage(CheckoutPageLocators):
 
     def get_checkout_header(self):
        return self.sl.wait_and_get_text(self.CHECKOUT_HEADER)
+
+    def get_checkout_error_msgs(self):
+       return self.sl.wait_and_get_text(self.CHECKOUT_HEADER_MSGS)

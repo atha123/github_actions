@@ -10,7 +10,7 @@ from ssqatest.src.pages.CheckoutPage import CheckoutPage
 @pytest.mark.usefixtures("init_driver")
 class TestCartPageFields:
     """
-    This is a test to verify the error message in the checkout page when the user enters invalid zipcode.
+    This is a test to verify the cart page has the 2 items (Belt and Sunglasses) added and the correct names show up.
     """
     @pytest.fixture(scope='class')
     def setup(self,request):
@@ -23,7 +23,7 @@ class TestCartPageFields:
 
     # @pytest.fixture(scope='class')
     @pytest.mark.lp26
-    def test_set_up(self,setup):
+    def test_product_names_in_cartpage(self,setup):
         """
         Test to perform the following steps
         1. Launch the test site.
@@ -32,7 +32,6 @@ class TestCartPageFields:
         4. Click on Add to cart button
         5. Repeat the above product "sunglasses"
         """
-
 
         self.home.go_home()
         self.header.input_int_search_field("belt")

@@ -8,7 +8,7 @@ from ssqatest.src.pages.Header import Header
 from ssqatest.src.pages.CheckoutPage import CheckoutPage
 
 @pytest.mark.usefixtures("init_driver")
-class Testcartpagefields:
+class TestCartPageFields:
     """
     This is a test to verify the error message in the checkout page when the user enters invalid zipcode.
     """

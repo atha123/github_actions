@@ -9,6 +9,7 @@ class ProductPageLocators:
     PRODUCT_TYPE_TEXT = (By.CSS_SELECTOR, 'div.entry-summary div.woocommerce-product-details__short-description')
     PRODUCT_PRICE = (By.CSS_SELECTOR, 'div.entry-summary p.price')
     ADD_TO_CART_BUTTON = (By.CSS_SELECTOR,'#product-17 > div.summary.entry-summary > form > button')
+    ADD_TO_CART_BUTTON_SUNGLASSES = (By.CSS_SELECTOR,'#product-19 > div.summary.entry-summary > form > button')
     # ADD_TO_CART_BUTTON = (By.CSS_SELECTOR, 'div[class*="add-to-cart"] button[class*="add_to_cart_button"][type="submit"]')
     VIEW_CART_BTN_IN_SUCCESS_MESSAGE = (By.CSS_SELECTOR, 'div.woocommerce-message[role="alert"]')
     # VIEW_CART_BTN_IN_SUCCESS_MESSAGE = (By.CSS_SELECTOR, '#content > div > div.woocommerce > div')

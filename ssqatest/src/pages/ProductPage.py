@@ -161,3 +161,11 @@ class ProductPage(ProductPageLocators):
     def get_confirm_msg_on_product_add_to_cart(self):
         msg = self.sl.wait_until_element_is_visible(self.VIEW_CART_BTN_IN_SUCCESS_MESSAGE)
         return msg
+
+    # For sunglasses test only
+    def get_add_to_cart_button_element_sunglasses(self):
+        return self.sl.wait_until_element_is_visible(self.ADD_TO_CART_BUTTON_SUNGLASSES)
+
+    def click_add_to_cart_button_sunglasses(self):
+        add_cart_btn = self.get_add_to_cart_button_element_sunglasses()
+        add_cart_btn.click()

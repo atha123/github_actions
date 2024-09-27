@@ -8,7 +8,7 @@ from ssqatest.src.pages.Header import Header
 from ssqatest.src.pages.CheckoutPage import CheckoutPage
 
 @pytest.mark.usefixtures("init_driver")
-class Testbusinessflow:
+class TestErrorMsgWhenAllDataEntered:
     """
     This is a test to verify the error message in the checkout page when the user enters all correct data but still there is a error
     message because the payment method is not set up
@@ -23,7 +23,7 @@ class Testbusinessflow:
         yield
 
     @pytest.mark.lp25
-    def test_add_product_to_cart(self,setup):
+    def test_verify_error_msg_when_all_billing_info_entered(self,setup):
         """
         Test to perform the following steps
         1. Launch the test site.

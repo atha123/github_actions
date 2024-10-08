@@ -30,7 +30,8 @@ run_BE_Regression:
       - env
       - cd ssqatest
 #      - python3 -m pytest tests/backend --html=$RESULTS_DIR/0982024_report.html  --self-contained-html
-      -  python3 -m pytest tests/backend --html=../results/${current_date}.html  --self-contained-html
+#      -  python3 -m pytest tests/backend --html=../results/${current_date}.html  --self-contained-html
+      -  python3 -m pytest tests/backend -s
       - pwd
       - ls
     when: always

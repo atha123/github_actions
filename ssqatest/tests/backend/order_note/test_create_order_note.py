@@ -6,7 +6,6 @@ import random
 
 
 @pytest.mark.ecombe99
-@pytest.mark.skip(reason="This test is failing and needs to be fixed")
 def test_create_order_note():
     """
        Test to verify the functionality of creating an order note.

@@ -36,3 +36,8 @@ run_BE_Regression:
       - python3 -m pytest tests/backend --html=../results/${current_date}.html  --self-contained-html
 #      - pwd
     when : always
+
+    artifacts:
+      when: always
+      paths:
+        - ../results

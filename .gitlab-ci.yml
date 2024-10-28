@@ -1,5 +1,5 @@
 stages:
-    - code_quality
+    - set_up
     - run_tests
     - after_test_run
 
@@ -16,6 +16,16 @@ run_pylint_quality_check:
       - pip install pylint
       - pylint -E ssqatest
 
+build_set_up:
+    image: $PYTHON_IMAGE
+    stage: set_up
+    script:
+      - pwd
+      - ls
+      - python -m pip install -r requirements.txt
+      - source variables_local.env
+    when: always
+
 run_BE_Regression:
     image: $PYTHON_IMAGE
     stage: run_tests
@@ -23,10 +33,9 @@ run_BE_Regression:
       - pwd
       - ls
       - mkdir results
-      - ls
       - current_date=$(date '+%Y-%m-%d')
-      - python -m pip install -r requirements.txt
-      - source variables_local.env
+#      - python -m pip install -r requirements.txt
+#      - source variables_local.env
       - env
       - cd ssqatest
 #      - python3 -m pytest tests/backend --html=$RESULTS_DIR/0982024_report.html  --self-contained-html

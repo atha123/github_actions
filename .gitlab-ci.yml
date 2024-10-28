@@ -1,6 +1,7 @@
 stages:
     - code_quality
     - run_tests
+    - after_test_run
 
 variables:
   PYTHON_IMAGE: python:3.10
@@ -33,6 +34,7 @@ run_BE_Regression:
 #      - python3 -m pytest tests/backend --html=$RESULTS_DIR/0982024_report.html  --self-contained-html
 #      - python3 -m pytest tests/backend -s
       - python3 -m pytest tests/backend --html=../results/${current_date}.html  --self-contained-html
+      - echo "All Backend tests have run!"
 
     when : always
 
@@ -40,3 +42,11 @@ run_BE_Regression:
       when: always
       paths:
         - results
+
+test_tracebility:
+  stage: after_test_run
+
+  script:
+    - echo "All tests in the regression suite have been run"
+    - echo "Please check the
+

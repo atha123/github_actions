@@ -22,9 +22,10 @@ build_set_up:
     script:
       - pwd
       - ls
+      - pip install --upgrade pip
       - python -m pip install -r requirements.txt
       - source variables_local.env
-      - pip install --upgrade pip
+
     when: always
 
 run_BE_Regression:

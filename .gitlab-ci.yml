@@ -34,11 +34,9 @@ run_BE_Regression:
       - ls
       - mkdir results
       - current_date=$(date '+%Y-%m-%d')
-#      - python -m pip install -r requirements.txt
-#      - source variables_local.env
       - env
       - cd ssqatest
-#      - python3 -m pytest tests/backend --html=$RESULTS_DIR/0982024_report.html  --self-contained-html
+      - python -m pip install -r requirements.txt
 #      - python3 -m pytest tests/backend -s
       - python3 -m pytest tests/backend --html=../results/${current_date}.html  --self-contained-html
       - echo "All Backend tests have run!"

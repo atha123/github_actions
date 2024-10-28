@@ -37,6 +37,7 @@ run_BE_Regression:
       - env
       - cd ssqatest
       - python -m pip install -r requirements.txt
+      - pytest
 #      - python3 -m pytest tests/backend -s
       - python3 -m pytest tests/backend --html=../results/${current_date}.html  --self-contained-html
       - echo "All Backend tests have run!"

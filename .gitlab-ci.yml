@@ -8,7 +8,7 @@ variables:
 
 run_pylint_quality_check:
     image: $PYTHON_IMAGE
-    stage: code_quality
+    stage: set_up
     when: manual
     script:
       - ls

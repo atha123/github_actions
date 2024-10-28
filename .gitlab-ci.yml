@@ -6,8 +6,6 @@ stages:
 variables:
   PYTHON_IMAGE: python:3.10
 
-
-
 run_pylint_quality_check:
     image: $PYTHON_IMAGE
     stage: code_quality
@@ -48,5 +46,7 @@ test_tracebility:
 
   script:
     - echo "All tests in the regression suite have been run"
-    - echo "Please check the
+    - echo "Please check the artifacts folder"
+
+  when: always
 

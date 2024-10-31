@@ -49,7 +49,7 @@ run_BE_Regression:
       - python3 -m pytest tests/backend --html=../results/${current_date}.html  --self-contained-html
       - echo "All Backend tests have run!"
 
-    when : manual
+    when : always
 
     artifacts:
       when: always
@@ -63,5 +63,5 @@ test_tracebility:
     - echo "All tests in the regression suite have been run"
     - echo "Please check the artifacts folder"
 
-  when: manual
+  when: always
 

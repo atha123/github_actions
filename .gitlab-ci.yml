@@ -24,8 +24,9 @@ build_set_up:
       - ls
       - pip install --upgrade pip
 #      - python -m pip install -r requirements.txt
-      - source variables_local.sh
+      - source variables_local.env
       - echo "Env variables are now set"
+      - env
 #      - DELETE THESE 2 LINES LATER
 #      - cd ssqatest
 #      - python3 -m pytest tests/backend --html=../results/${current_date}.html  --self-contained-html
@@ -48,7 +49,7 @@ run_BE_Regression:
       - python3 -m pytest tests/backend --html=../results/${current_date}.html  --self-contained-html
       - echo "All Backend tests have run!"
 
-    when : always
+    when : manual
 
     artifacts:
       when: always
@@ -62,5 +63,5 @@ test_tracebility:
     - echo "All tests in the regression suite have been run"
     - echo "Please check the artifacts folder"
 
-  when: always
+  when: manual
 

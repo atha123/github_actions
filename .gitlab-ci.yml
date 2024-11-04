@@ -30,7 +30,6 @@ build_set_up:
 #      - DELETE THESE 2 LINES LATER
 #      - cd ssqatest
 #      - python3 -m pytest tests/backend --html=../results/${current_date}.html  --self-contained-html
-
     when: always
 
 run_BE_Regression:

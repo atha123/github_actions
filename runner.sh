@@ -19,8 +19,7 @@ echo "Tests have run through the runner file"
 #
 #location=$1
 #options=$2
-#
-#
+
 #timestamp=`date "+%Y%m%d%H%M%S"`
 #output_dir=$(pwd)/output/${timestamp}
 #log_file=${output_dir}/pytest_log.log

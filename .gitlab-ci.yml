@@ -47,7 +47,8 @@ run_BE_Regression:
       - cd ssqatest
 
 #      - python3 -m pytest tests/backend -s
-      - python3 -m pytest tests/backend --html=../results/${current_date}.html  --self-contained-html
+#      - python3 -m pytest tests/backend --html=../results/${current_date}.html  --self-contained-html
+      - /bin/sh ./runner.sh ssqatest/tests/backend
       - echo "All Backend tests have run!"
 
     when : always

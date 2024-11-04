@@ -5,7 +5,7 @@ options = $2
 current_date=$(date '+%Y-%m-%d')
 
 
-python3 -m ${location} --html=../results/${current_date}.html  --self-contained-html
+python3 -m ${location} --html= ../results/${current_date}.html  --self-contained-html
 echo "Tests have run through the runner file"
 
 

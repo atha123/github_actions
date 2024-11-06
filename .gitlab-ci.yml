@@ -43,6 +43,7 @@ run_BE_Regression:
       - source variables_local.env
       - env
       - mkdir results
+      - dir
       - current_date=$(date '+%Y-%m-%d')
       - env
       - python -m pip install -r requirements.txt

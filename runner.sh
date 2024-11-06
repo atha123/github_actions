@@ -1,7 +1,7 @@
 set -x
 
 location = $1
-options = $2
+#options = $2
 current_date=$(date '+%Y-%m-%d')
 
 

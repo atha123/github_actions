@@ -50,7 +50,7 @@ run_BE_Regression:
 
 #      - python3 -m pytest tests/backend -s
 #      - python3 -m pytest tests/backend --html=../results/${current_date}.html  --self-contained-html
-      - echo "Building for branch: ${CI_COMMIT_REF_NAME}"
+      - echo ${CI_COMMIT_REF_NAME}
       - /bin/sh ./runner.sh ssqatest/tests
 #      - /bin/sh ./runner.sh ssqatest/tests/backend
       - echo "This is from yml file - All Backend tests have run!"

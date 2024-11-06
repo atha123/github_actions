@@ -6,8 +6,9 @@ current_date=$(date '+%Y-%m-%d')
 
 
 #python3 -m ${location} --html=../../results/${current_date}.html  --self-contained-html
+pwd
 python3 -m pytest ${location} --html=../../results/${current_date}.html  --self-contained-html
-echo "Tests have run through the runner file"
+echo "This is from runner file- Tests have run through the runner file"
 
 
 

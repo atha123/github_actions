@@ -67,9 +67,15 @@ test_tracebility:
   stage: deploy_prod
 
   script:
-    - echo "All tests in the regression suite have been run"
-    - echo "Please check the artifacts folder"
+    - echo "All tests in the regression suite have been run. Please check the artifacts folder"
     - echo "The author is" ${CI_COMMIT_AUTHOR}
+    - echo "The branch is:" ${CI_COMMIT_REF_NAME}
+    - echo "The commit timestamp   is:" ${CI_COMMIT_TIMESTAMP}
+    - echo "The commit title  is:" ${CI_COMMIT_TITLE}
+    - echo "The env name  is:" ${CI_ENVIRONMENT_NAME}
+    - echo "The url  is:" ${CI_ENVIRONMENT_URL}
+    - echo "The job name is:" ${CI_JOB_NAME}
+    - echo "The commit branch is: CI_COMMIT_REF_NAME:" ${CI_COMMIT_BRANCH}
 
   when: always
 

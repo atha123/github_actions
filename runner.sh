@@ -4,7 +4,7 @@ set -x
 #options = $2
 current_date=$(date '+%Y-%m-%d')
 
-
+cd ssqatest
 python3 -m ssqatest/tests/backend --html=../../results/${current_date}.html  --self-contained-html
 pwd
 #python3 -m pytest ${location}  --html=../results/${current_date}.html  --self-contained-html

@@ -90,7 +90,7 @@ test_tracebility:
 merge_request_tasks:
   stage: delivery
   script:
-    - echo "This job runs in merge request pipelines"
+    - echo "This job runs in merge request pipelines only"
   rules:
     - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
 

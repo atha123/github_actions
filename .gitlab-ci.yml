@@ -2,7 +2,7 @@ stages:
     - set_up
     - run_tests
     - deploy_prod
-#    - delivery
+    - delivery
 
 variables:
   PYTHON_IMAGE: python:3.10
@@ -86,8 +86,11 @@ test_tracebility:
 
   when: always
 
-#merge_request_tasks:
-#  stage: delivery
-#  script:
-#    -
+#Run this only if the branch is merged to main
+merge_request_tasks:
+  stage: delivery
+  script:
+    -echo "This job runs in merge request pipelines"
+  rules:
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
 

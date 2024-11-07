@@ -80,7 +80,7 @@ test_tracebility:
     - echo "Open merge requests" ${CI_OPEN_MERGE_REQUESTS}
     - echo "Pipeline ID is " ${CI_PIPELINE_ID}
     - echo "Pipeline trigger source is " ${CI_PIPELINE_SOURCE}
-
+    - echo "Merge label is " ${CI_MERGE_REQUEST_LABELS}
     - echo "Runner ID  " ${CI_RUNNER_ID}
 
   when: always

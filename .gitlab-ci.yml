@@ -1,15 +1,14 @@
 stages:
-    - code_quality
+    - set_up
     - run_tests
+    - deploy_prod
 
 variables:
   PYTHON_IMAGE: python:3.10
 
-
-
 run_pylint_quality_check:
     image: $PYTHON_IMAGE
-    stage: code_quality
+    stage: set_up
     when: manual
     script:
       - ls
@@ -17,21 +16,72 @@ run_pylint_quality_check:
       - pip install pylint
       - pylint -E ssqatest
 
+build_set_up:
+    image: $PYTHON_IMAGE
+    stage: set_up
+    script:
+      - pwd
+      - ls
+      - pip install --upgrade pip
+      - echo "Project title " ${CI_PROJECT_TITLE}
+
+
+#      - python -m pip install -r requirements.txt
+#      - source variables_local.env
+#      - echo "Env variables are now set"
+#      - env
+#      - DELETE THESE 2 LINES LATER
+#      - cd ssqatest
+#      - python3 -m pytest tests/backend --html=../results/${current_date}.html  --self-contained-html
+    when: always
+
 run_BE_Regression:
     image: $PYTHON_IMAGE
     stage: run_tests
     script:
       - pwd
       - ls
-      - mkdir results
-      - current_date=$(date '+%Y-%m-%d')
-      - python -m pip install -r requirements.txt
       - source variables_local.env
       - env
-      - cd ssqatest
-#      - python3 -m pytest tests/backend --html=$RESULTS_DIR/0982024_report.html  --self-contained-html
-#      -  python3 -m pytest tests/backend --html=../results/${current_date}.html  --self-contained-html
+      - mkdir results
+      - dir
+      - current_date=$(date '+%Y-%m-%d')
+      - env
+      - python -m pip install -r requirements.txt
+#      - cd ssqatest
+
 #      - python3 -m pytest tests/backend -s
-      - python3 -m pytest tests/backend --html=../results/${current_date}.html  --self-contained-html
-      - pwd
-    when : always
+#      - python3 -m pytest tests/backend --html=../results/${current_date}.html  --self-contained-html
+      - /bin/sh ./runner.sh
+#      - /bin/sh ./runner.sh ssqatest/tests/backend
+      - echo "The branch is:" ${CI_COMMIT_REF_NAME}
+      - echo "This is from yml file - All Backend tests have run!"
+
+    when : manual
+
+    artifacts:
+      when: always
+      paths:
+        - results
+
+test_tracebility:
+  stage: deploy_prod
+
+  script:
+    - echo "All tests in the regression suite have been run. Please check the artifacts folder"
+    - echo "The author is" ${CI_COMMIT_AUTHOR}
+    - echo "The branch is CI_COMMIT_REF_NAME:" ${CI_COMMIT_REF_NAME}
+    - echo "The commit branch is CI_COMMIT_BRANCH :" ${CI_COMMIT_BRANCH}
+    - echo "The commit timestamp   is:" ${CI_COMMIT_TIMESTAMP}
+    - echo "The commit title  is:" ${CI_COMMIT_TITLE}
+    - echo "The env name  is:" ${CI_ENVIRONMENT_NAME}
+    - echo "The url  is:" ${CI_ENVIRONMENT_URL}
+    - echo "The job name is:" ${CI_JOB_NAME}
+    - echo "Open merge requests" ${CI_OPEN_MERGE_REQUESTS}
+    - echo "Pipeline ID is " ${CI_PIPELINE_ID}
+    - echo "Pipeline trigger source is " ${CI_PIPELINE_SOURCE}
+
+    - echo "Runner ID  " ${CI_RUNNER_ID}
+
+  when: always
+

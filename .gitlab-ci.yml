@@ -23,6 +23,7 @@ build_set_up:
       - pwd
       - ls
       - pip install --upgrade pip
+      - echo "Project title " ${CI_PROJECT_TITLE}
 
 
 #      - python -m pip install -r requirements.txt
@@ -79,10 +80,8 @@ test_tracebility:
     - echo "Open merge requests" ${CI_OPEN_MERGE_REQUESTS}
     - echo "Pipeline ID is " ${CI_PIPELINE_ID}
     - echo "Pipeline trigger source is " ${CI_PIPELINE_SOURCE}
-    - echo "Project title " ${CI_PROJECT_TITLE}
+
     - echo "Runner ID  " ${CI_RUNNER_ID}
-
-
 
   when: always
 

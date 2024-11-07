@@ -1,4 +1,4 @@
-#set -x
+set -x
 
 #location = $1
 #options = $2

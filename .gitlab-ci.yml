@@ -94,5 +94,5 @@ merge_request_tasks:
   rules:
     - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
     - except:
-        -push
+        - push
 

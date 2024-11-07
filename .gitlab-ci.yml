@@ -69,6 +69,7 @@ test_tracebility:
   script:
     - echo "All tests in the regression suite have been run"
     - echo "Please check the artifacts folder"
+    - echo "The author is" ${CI_COMMIT_AUTHOR}
 
   when: always
 

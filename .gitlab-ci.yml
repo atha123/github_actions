@@ -56,7 +56,7 @@ run_BE_Regression:
       - echo "The branch is:" ${CI_COMMIT_REF_NAME}
       - echo "This is from yml file - All Backend tests have run!"
 
-    when : always
+    when : manual
 
     artifacts:
       when: always
@@ -69,19 +69,19 @@ test_tracebility:
   script:
     - echo "All tests in the regression suite have been run. Please check the artifacts folder"
     - echo "The author is" ${CI_COMMIT_AUTHOR}
-    - echo "The branch is:" ${CI_COMMIT_REF_NAME}
+    - echo "The branch is CI_COMMIT_REF_NAME:" ${CI_COMMIT_REF_NAME}
+    - echo "The commit branch is CI_COMMIT_BRANCH :" ${CI_COMMIT_BRANCH}
     - echo "The commit timestamp   is:" ${CI_COMMIT_TIMESTAMP}
     - echo "The commit title  is:" ${CI_COMMIT_TITLE}
     - echo "The env name  is:" ${CI_ENVIRONMENT_NAME}
     - echo "The url  is:" ${CI_ENVIRONMENT_URL}
     - echo "The job name is:" ${CI_JOB_NAME}
-    - echo "The commit branch is CI_COMMIT_REF_NAME:" ${CI_COMMIT_BRANCH}
     - echo "Open merge requests" ${CI_OPEN_MERGE_REQUESTS}
     - echo "Pipeline ID is " ${CI_PIPELINE_ID}
     - echo "Pipeline trigger source is " ${CI_PIPELINE_SOURCE}
     - echo "Project title " ${CI_PROJECT_TITLE}
     - echo "Runner ID  " ${CI_RUNNER_ID}
-    - echo "Runner Desc  " ${CI_RUNNER_DESCRIPTION}
+
 
 
   when: always

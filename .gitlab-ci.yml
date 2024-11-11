@@ -63,7 +63,7 @@ run_BE_Regression:
     artifacts:
       when: always
       paths:
-        - results
+        - ../results
 
 test_tracebility:
   stage: deploy_prod

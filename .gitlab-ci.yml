@@ -52,13 +52,13 @@ run_BE_Regression:
 #      - cd ssqatest
 
 #      - python3 -m pytest tests/backend -s
-#      - python3 -m pytest tests/backend --html=../results/${current_date}.html  --self-contained-html
-      - /bin/sh ./runner.sh
+      - python3 -m pytest tests/backend --html=../results/${current_date}.html  --self-contained-html
+#      - /bin/sh ./runner.sh
 #      - /bin/sh ./runner.sh ssqatest/tests/backend
       - echo "The branch is:" ${CI_COMMIT_REF_NAME}
       - echo "This is from yml file - All Backend tests have run!"
 
-    when : manual
+    when : always
 
     artifacts:
       when: always

@@ -1,11 +1,11 @@
 set -x
 
-#location = $1
+location = $1
 #options = $2
 current_date=$(date '+%Y-%m-%d')
 
-python3 -m pytest ssqatest/tests/backend --html=../../results/${current_date}.html  --self-contained-html
-#python3 -m pytest ${location}  --html=../results/${current_date}.html  --self-contained-html
+#python3 -m pytest ssqatest/tests/backend --html=../../results/${current_date}.html  --self-contained-html
+python3 -m pytest ${location}  --html=../results/${current_date}.html  --self-contained-html
 echo "This is from runner file- Tests have run through the runner file"
 
 

@@ -96,6 +96,7 @@ merge_request_tasks:
     - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
 
 tests_with_junit_reports:
+  image: $PYTHON_IMAGE
   stage: reporting
   script:
     - python -m pip install -r requirements.txt

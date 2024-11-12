@@ -98,6 +98,8 @@ merge_request_tasks:
 tests_with_junit_reports:
   stage: reporting
   script:
+    - python -m pip install -r requirements.txt
+    - source variables_local.env
     - /bin/sh tests_with_junit_reports.sh ssqatest/tests/backend
   artifacts:
     paths:

@@ -104,6 +104,6 @@ tests_with_junit_reports:
       - results
     reports:
       junit: results/lhp.xml
-      expire_in: 2M
+      expire_in: "1 week"
     when: always
 

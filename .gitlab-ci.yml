@@ -103,7 +103,7 @@ tests_with_junit_reports:
     paths:
       - results
     reports:
-      junit:results/lhp.xml
+      junit: results/lhp.xml
       expire_in: 30 days
     when: always
 

@@ -62,7 +62,7 @@ run_BE_Regression:
     when : manual
 
     artifacts:
-      when: manual
+      when: always
       paths:
         - results
 

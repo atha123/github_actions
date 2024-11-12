@@ -2,7 +2,8 @@ stages:
     - set_up
     - run_tests
     - deploy_prod
-#    - delivery
+    - delivery
+    - reporting
 
 variables:
   PYTHON_IMAGE: python:3.10
@@ -53,8 +54,8 @@ run_BE_Regression:
 
 #      - python3 -m pytest tests/backend -s
 #      - python3 -m pytest tests/backend --html=../results/${current_date}.html  --self-contained-html
-      - /bin/sh ./runner.sh
-#      - /bin/sh ./runner.sh ssqatest/tests/backend
+#      - /bin/sh ./runner.sh
+      - /bin/sh ./runner.sh ssqatest/tests/backend
       - echo "The branch is:" ${CI_COMMIT_REF_NAME}
       - echo "This is from yml file - All Backend tests have run!"
 
@@ -84,10 +85,31 @@ test_tracebility:
     - echo "Merge label is " ${CI_MERGE_REQUEST_LABELS}
     - echo "Runner ID  " ${CI_RUNNER_ID}
 
-  when: always
+  when: manual
 
-#merge_request_tasks:
-#  stage: delivery
-#  script:
-#    -
+#Run this only if the branch is merged to main
+merge_request_tasks:
+  stage: delivery
+  script:
+    - echo "This job runs in merge request pipelines only"
+  rules:
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+
+tests_with_junit_reports:
+  image: $PYTHON_IMAGE
+  stage: reporting
+  script:
+    - python -m pip install -r requirements.txt
+    - source variables_local.env
+    - mkdir results
+    - dir
+    - ls
+    - /bin/sh tests_with_junit_reports.sh ssqatest/tests/backend
+  artifacts:
+    paths:
+      - results
+    reports:
+      junit: results/lhp.xml
+#      expire_in: 1 week
+    when: always
 

@@ -100,6 +100,9 @@ tests_with_junit_reports:
   script:
     - python -m pip install -r requirements.txt
     - source variables_local.env
+    - mkdir results
+    - dir
+    - ls
     - /bin/sh tests_with_junit_reports.sh ssqatest/tests/backend
   artifacts:
     paths:

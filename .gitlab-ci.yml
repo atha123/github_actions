@@ -5,11 +5,15 @@ stages:
     - delivery
     - reporting
 
+
+default:
+    image: $PYTHON_IMAGE
+
 variables:
   PYTHON_IMAGE: python:3.10
 
 run_pylint_quality_check:
-    image: $PYTHON_IMAGE
+#    image: $PYTHON_IMAGE
     stage: set_up
     when: manual
     script:
@@ -19,7 +23,7 @@ run_pylint_quality_check:
       - pylint -E ssqatest
 
 build_set_up:
-    image: $PYTHON_IMAGE
+#    image: $PYTHON_IMAGE
     stage: set_up
     script:
       - pwd
@@ -38,7 +42,7 @@ build_set_up:
     when: always
 
 run_BE_Regression:
-    image: $PYTHON_IMAGE
+#    image: $PYTHON_IMAGE
     stage: run_tests
     script:
       - pwd
@@ -96,7 +100,7 @@ merge_request_tasks:
     - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
 
 tests_with_junit_reports:
-  image: $PYTHON_IMAGE
+#  image: $PYTHON_IMAGE
   stage: reporting
   script:
     - python -m pip install -r requirements.txt
@@ -110,6 +114,6 @@ tests_with_junit_reports:
       - results
     reports:
       junit: results/lhp.xml
-      expire_in: 1 week
+#      expire_in: 1 week
     when: always
 

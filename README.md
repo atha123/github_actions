@@ -87,4 +87,4 @@ cd ssqatest
 python3 -m pytest tests -m fe_home_001
 
 ## Test Automation Process 
-![Automation Framework](images/automation_process.png)
+![Automation Framework](images/automation_process.jpg)

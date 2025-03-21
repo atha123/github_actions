@@ -6,6 +6,15 @@ from ssqatest.src.pages.ProductPage import ProductPage
 from ssqatest.src.pages.CartPage import CartPage
 from ssqatest.src.pages.Header import Header
 from ssqatest.src.pages.CheckoutPage import CheckoutPage
+import allure
+
+
+# @allure.description("Verify the cart page has the 2 items added and the correct names show up.")
+@allure.tag("Cart","Integration_test_phase" )
+@allure.severity(allure.severity_level.CRITICAL)
+@allure.label("owner", "Latha Pai")
+@allure.issue("Defect ticket: ERP-9900")
+@allure.testcase("Jira Story ticket: TMS-456")
 
 @pytest.mark.usefixtures("init_driver")
 class TestCartPageFields:
@@ -23,6 +32,7 @@ class TestCartPageFields:
 
     # @pytest.fixture(scope='class')
     @pytest.mark.lp26
+    @allure.title("TMS-456- Verify the cart page has the 2 items added and the correct names show up")
     def test_product_names_in_cartpage(self,setup):
         """
         Test to perform the following steps

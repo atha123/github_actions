@@ -127,5 +127,27 @@ cd ssqatest
 python3 -m pytest tests -m fe001_checkout
 ```
 
+## Reports
+Use Allure report
+1. To run the whole test suite
+```commandline
+pytest --alluredir = allure_results
+allure serve allure_results
+```
+![Running entire test suite](images/whole_suite_execution.jpg)
+2. To run a specific test
+```commandline
+pytest -k "test_verify_mainpage_labels.py" --alluredir = allure_results
+```
+3. Ensure the tests have the necessary details.
+
+![Details in each test](images/passed_test_details.jpg)
+
+
+4. Ensure that the failing tests have the defect ticket mentioned. 
+
+![Defect ticket number](images/failed_defect.jpg)
+
 ## Test Automation Process 
-![Automation Framework](images/automation_process.jpg)
+![Test Automation Process](images/automation_process.jpg)
+

@@ -94,8 +94,8 @@ export WOO_SECRET= cs_1234
 
 #### Credentials for the wordpress/mysql database
 ```commandline
-export DB_USER=root 
-export DB_PASSWORD=root
+export DB_USER= <username>
+export DB_PASSWORD= <password>
 ```
 
 
@@ -134,7 +134,7 @@ Use Allure report
 pytest --alluredir = allure_results
 allure serve allure_results
 ```
-![Running entire test suite](images/whole_suite_execution.jpg)
+
 2. To run a specific test
 ```commandline
 pytest -k "test_verify_mainpage_labels.py" --alluredir = allure_results

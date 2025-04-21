@@ -134,6 +134,7 @@ Use Allure report
 pytest --alluredir = allure_results
 allure serve allure_results
 ```
+c
 
 2. To run a specific test
 ```commandline

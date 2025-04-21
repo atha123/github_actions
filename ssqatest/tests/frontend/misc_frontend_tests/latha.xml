@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="qalivestore" errors="0" failures="1" skipped="0" tests="1" time="19.560" timestamp="2025-04-03T14:00:10.932314" hostname="latha"><testcase classname="tests.frontend.misc_frontend_tests.test_sequence_in_homepage_dropdown_menu.TestDropDown" name="test_home_dropdown" time="19.049"><failure message="selenium.common.exceptions.TimeoutException: Message: Element with locator '('css selector', 'form.woocommerce-ordering')' not found after timeout of 10&#10;Stacktrace:&#10;&#09;GetHandleVerifier [0x00007FF654BE4C25+3179557]&#10;&#09;(No symbol) [0x00007FF6548488A0]&#10;&#09;(No symbol) [0x00007FF6546D91CA]&#10;&#09;(No symbol) [0x00007FF65472FA67]&#10;&#09;(No symbol) [0x00007FF65472FC9C]&#10;&#09;(No symbol) [0x00007FF654783627]&#10;&#09;(No symbol) [0x00007FF654757C6F]&#10;&#09;(No symbol) [0x00007FF6547802F3]&#10;&#09;(No symbol) [0x00007FF654757A03]&#10;&#09;(No symbol) [0x00007FF6547206D0]&#10;&#09;(No symbol) [0x00007FF654721983]&#10;&#09;GetHandleVerifier [0x00007FF654C467CD+3579853]&#10;&#09;GetHandleVerifier [0x00007FF654C5D1D2+3672530]&#10;&#09;GetHandleVerifier [0x00007FF654C52153+3627347]&#10;&#09;GetHandleVerifier [0x00007FF6549B092A+868650]&#10;&#09;(No symbol) [0x00007FF654852FFF]&#10;&#09;(No symbol) [0x00007FF65484F4A4]&#10;&#09;(No symbol) [0x00007FF65484F646]&#10;&#09;(No symbol) [0x00007FF65483EAA9]&#10;&#09;BaseThreadInitThunk [0x00007FF8CECE7374+20]&#10;&#09;RtlUserThreadStart [0x00007FF8D021CC91+33]">self = &lt;ssqatest.tests.frontend.misc_frontend_tests.test_sequence_in_homepage_dropdown_menu.TestDropDown object at 0x000001F2DA2FE8A0&gt;
+
+    @pytest.mark.lp009
+    def test_home_dropdown(self):
+        home= HomePage(self.driver)
+        home.go_to_home_page()
+&gt;       drop_down = home.get_sorting_dropdown_bottom_page()
+
+test_sequence_in_homepage_dropdown_menu.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+..\..\..\src\pages\HomePage.py:61: in get_sorting_dropdown_bottom_page
+    return self.sl.wait_and_get_text(self.DROPDOWN_BOTTOM)
+..\..\..\src\selenium_extended\SeleniumExtended.py:84: in wait_and_get_text
+    elm = WebDriverWait(self.driver, timeout).until(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;selenium.webdriver.support.wait.WebDriverWait (session="58c68ebfef6ff6a5ed8c6454c5e549a1")&gt;, method = &lt;function visibility_of_element_located.&lt;locals&gt;._predicate at 0x000001F2D99594E0&gt;
+message = "Element with locator '('css selector', 'form.woocommerce-ordering')' not found after timeout of 10"
+
+    def until(self, method: Callable[[D], Union[Literal[False], T]], message: str = "") -&gt; T:
+        """Calls the method provided with the driver as an argument until the \
+        return value does not evaluate to ``False``.
+    
+        :param method: callable(WebDriver)
+        :param message: optional message for :exc:`TimeoutException`
+        :returns: the result of the last call to `method`
+        :raises: :exc:`selenium.common.exceptions.TimeoutException` if timeout occurs
+        """
+        screen = None
+        stacktrace = None
+    
+        end_time = time.monotonic() + self._timeout
+        while True:
+            try:
+                value = method(self._driver)
+                if value:
+                    return value
+            except self._ignored_exceptions as exc:
+                screen = getattr(exc, "screen", None)
+                stacktrace = getattr(exc, "stacktrace", None)
+            time.sleep(self._poll)
+            if time.monotonic() &gt; end_time:
+                break
+&gt;       raise TimeoutException(message, screen, stacktrace)
+E       selenium.common.exceptions.TimeoutException: Message: Element with locator '('css selector', 'form.woocommerce-ordering')' not found after timeout of 10
+E       Stacktrace:
+E       	GetHandleVerifier [0x00007FF654BE4C25+3179557]
+E       	(No symbol) [0x00007FF6548488A0]
+E       	(No symbol) [0x00007FF6546D91CA]
+E       	(No symbol) [0x00007FF65472FA67]
+E       	(No symbol) [0x00007FF65472FC9C]
+E       	(No symbol) [0x00007FF654783627]
+E       	(No symbol) [0x00007FF654757C6F]
+E       	(No symbol) [0x00007FF6547802F3]
+E       	(No symbol) [0x00007FF654757A03]
+E       	(No symbol) [0x00007FF6547206D0]
+E       	(No symbol) [0x00007FF654721983]
+E       	GetHandleVerifier [0x00007FF654C467CD+3579853]
+E       	GetHandleVerifier [0x00007FF654C5D1D2+3672530]
+E       	GetHandleVerifier [0x00007FF654C52153+3627347]
+E       	GetHandleVerifier [0x00007FF6549B092A+868650]
+E       	(No symbol) [0x00007FF654852FFF]
+E       	(No symbol) [0x00007FF65484F4A4]
+E       	(No symbol) [0x00007FF65484F646]
+E       	(No symbol) [0x00007FF65483EAA9]
+E       	BaseThreadInitThunk [0x00007FF8CECE7374+20]
+E       	RtlUserThreadStart [0x00007FF8D021CC91+33]
+
+..\..\..\..\venv\Lib\site-packages\selenium\webdriver\support\wait.py:105: TimeoutException</failure></testcase></testsuite></testsuites>

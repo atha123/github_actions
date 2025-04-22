@@ -1,0 +1,1 @@
+python3 -m pytest tests/backend --html=../results/${current_date}.html  --self-contained-html

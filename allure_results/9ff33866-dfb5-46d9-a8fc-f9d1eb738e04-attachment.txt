@@ -1,0 +1,2 @@
+Count of items before clicking 'Add to cart' is : 0
+Count of items after clicking 'Add to cart' is : 1

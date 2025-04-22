@@ -1,0 +1,1 @@
+WARNING: StaleElementReferenceException. Sleeping for 1 second and retrying.

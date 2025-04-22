@@ -1,0 +1,9 @@
+drop_down has this:      Default sorting
+     Sort by popularity
+     Sort by average rating
+     Sort by latest
+     Sort by price: low to high
+     Sort by price: high to low
+   
+contents has this: ['     Default sorting', '     Sort by popularity', '     Sort by average rating', '     Sort by latest', '     Sort by price: low to high', '     Sort by price: high to low', '   ']
+<class 'list'>

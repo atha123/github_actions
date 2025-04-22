@@ -1,0 +1,7 @@
+ expected 'Default sorting' = actual 'Default sorting'
+ expected 'Sort by popularity' = actual 'Sort by popularity'
+ expected 'Sort by average rating' = actual 'Sort by average rating'
+ expected 'Sort by latest' = actual 'Sort by latest'
+ expected 'Sort by price: low to high' = actual 'Sort by price: low to high'
+ expected 'Sort by price: high to low' = actual 'Sort by price: high to low'
+ expected '' = actual ''

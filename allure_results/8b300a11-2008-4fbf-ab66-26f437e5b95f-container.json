@@ -1,0 +1,1 @@
+{"uuid": "efc68123-ae15-4e83-8364-b95549f5b5c0", "children": ["1a125f14-59b3-47d1-a708-afb9de8a012e"], "befores": [{"name": "create_customer", "status": "passed", "start": 1742568688267, "stop": 1742568688722}], "start": 1742568688267, "stop": 1742568688984}

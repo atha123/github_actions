@@ -1,0 +1,2 @@
+ The sale price of selected item that is NOT on sale'update_jd'  before update is:  is: '' and ID is 14907
+15.00
